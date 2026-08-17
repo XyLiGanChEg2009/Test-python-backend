@@ -1,0 +1,7 @@
+sanic
+sqlalchemy
+asyncpg
+alembic
+passlib[bcrypt]
+pyjwt
+python-dotenv
