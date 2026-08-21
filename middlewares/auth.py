@@ -7,7 +7,7 @@ from sqlalchemy import select
 async def authenticate(request):
     print("Requset path: ", request.path)
     path = request.path.rstrip('/')
-    if path in ["/auth/login", "/auth/register", "/ping"]:
+    if path in ["/auth/login", "/auth/register", "/auth/refresh", "/auth/logout", "/ping"]:
         return 
     
     auth_header = request.headers.get("Authorization")
