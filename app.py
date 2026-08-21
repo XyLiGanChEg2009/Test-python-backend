@@ -8,6 +8,7 @@ from middlewares.auth import authenticate
 
 from routes.auth import bp as auth_bp
 from routes.protected import bp as protected_bp
+from routes.admin import bp as admin_bp
 
 app = Sanic("AuthTestApp")
 
@@ -17,6 +18,7 @@ app.register_middleware(close_session, "response")
 
 app.blueprint(auth_bp)
 app.blueprint(protected_bp)
+app.blueprint(admin_bp)
 
 @app.before_server_start
 async def init_db(app):
